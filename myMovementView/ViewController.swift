@@ -45,12 +45,12 @@ class ViewController: UIViewController {
             return
         }
         let changedValue = slider.value - currentValue
-        self.currentValue = slider.value
         
         let ratio = (self.view.frame.size.width - (myView.bounds.size.width)) / CGFloat(slider.maximumValue)
         var centerPoint = myView.center
         centerPoint = CGPoint(x: (centerPoint.x + CGFloat(changedValue) * ratio), y: centerPoint.y)
         myView.center = centerPoint
+        self.currentValue = slider.value
     }
 
 }
